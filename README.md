@@ -36,9 +36,6 @@ pip install pandas numpy matplotlib seaborn scipy scikit-learn statsmodels xgboo
 
 3. Run the Python script:
 
-   ```bash
-   python sales_forecasting.py
-   ```
 
 ## Models Used
 
