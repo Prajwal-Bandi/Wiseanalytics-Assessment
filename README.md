@@ -1,73 +1,59 @@
 # Sales Forecasting Project
 
-## Overview
+## Project Overview
+This project focuses on forecasting sales using multiple models, including traditional statistical methods, machine learning models, and deep learning approaches. The models implemented are:
 
-##
-
-This project aims to predict future sales using various machine learning models, including Naïve Forecasting, ARIMA, Random Forest, XGBoost, and LSTM. The dataset includes information on store sales, oil prices, holidays, and transactions.
+- **Naïve Forecasting** (Baseline model)
+- **ARIMA (AutoRegressive Integrated Moving Average)**
+- **Random Forest Regressor**
+- **XGBoost**
+- **LSTM (Long Short-Term Memory Neural Network)**
 
 ## Requirements
+Ensure you have the necessary dependencies installed before running the project. You can install them using:
 
-Ensure you have the following dependencies installed:
-
-```bash
-pip install pandas numpy matplotlib seaborn scipy scikit-learn statsmodels xgboost tensorflow missingno
+```sh
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels tensorflow xgboost missingno
 ```
 
 ## Dataset
-
-- `train.csv`: Historical sales data
-- `test.csv`: Test data for predictions
-- `stores.csv`: Store details
-- `oil.csv`: Oil price data
-- `holidays_events.csv`: Holiday and event data
-- `transactions.csv`: Store transaction data
+The project uses the following datasets:
+- `train.csv`: Contains historical sales data.
+- `test.csv`: Test data for sales prediction.
+- `stores.csv`: Store-related information.
+- `oil.csv`: Daily oil prices (important for economic context).
+- `holidays_events.csv`: Holidays and events impacting sales.
+- `transactions.csv`: Transaction data for stores.
 
 ## Running the Project
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   cd sales-forecasting
-   ```
-
-2. Place the dataset files in the project directory.
-
-3. Run the Python script:
+1. Load and preprocess the datasets.
+2. Handle missing values using interpolation and forward fill methods.
+3. Perform feature engineering to extract useful date-based features.
+4. Train multiple forecasting models.
+5. Evaluate model performance using RMSE, MAPE, and R-Squared.
+6. Visualize actual vs. predicted sales trends.
+7. Analyze feature importance for decision-making.
 
 
-## Models Used
+## Performance Comparison
+The models are evaluated using:
+- **Root Mean Squared Error (RMSE)**
+- **Mean Absolute Percentage Error (MAPE)**
+- **R-Squared Score**
 
-- **Naïve Forecasting**: Baseline model
-- **ARIMA**: Time series model
-- **Random Forest**: Tree-based regression
-- **XGBoost**: Gradient boosting model (Best performer)
-- **LSTM**: Deep learning-based approach
-
-## Evaluation Metrics
-
-- **RMSE**: Measures the error in predictions
-- **MAPE**: Percentage error in predictions
-- **R-squared**: Measures model performance
-
-## Results
-
-XGBoost provided the best performance with the lowest error rates and highest accuracy.
+> **Note:** LSTM and ARIMA models take more time to run, depending on system specifications.
 
 ## Business Insights
+- **Best Performing Model**: The model with the lowest RMSE and highest R-Squared score is preferred.
+- **Impact of External Factors**:
+  - Oil prices influence sales trends due to economic conditions.
+  - Holiday seasons see fluctuations in sales volume.
+  - Promotions and discounts can significantly boost sales.
+- **Recommendations**:
+  - Use accurate sales forecasting for **inventory planning**.
+  - Implement **targeted promotions** during peak sales periods.
+  - Monitor economic indicators like oil prices for demand forecasting.
 
-- Consider inventory optimization based on forecasted demand.
-- Use promotions strategically to maximize sales.
-- Monitor external factors like oil prices and holidays for better planning.
-
-## Future Improvements
-
-- Fine-tune hyperparameters for better accuracy.
-- Incorporate additional external factors such as weather data.
-- Experiment with ensemble learning techniques.
-
-## Author
-
-[Prajwal Bandi](https://github.com/PrajwalBandi)
+## Conclusion
+This project demonstrates the power of various forecasting models in predicting sales trends. Choosing the right model depends on accuracy, computational efficiency, and business requirements. 🚀
 
